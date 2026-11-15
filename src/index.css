@@ -439,3 +439,24 @@ button { font: inherit; }
  .route-path-caption { font-size:7px; letter-spacing:.4px; }
 }
 @media(prefers-reduced-motion:reduce) { .route-spacecraft { animation:none; } }
+
+
+/* Phase 11: fill the anatomy viewport's unused lower area with a useful scan console */
+.real-anatomy-viewport { position:relative; }
+.anatomy-scan-console {
+  position:absolute; z-index:20; left:14px; right:14px; bottom:14px;
+  padding:14px 16px 12px; border:1px solid rgba(91,205,224,.35);
+  border-radius:14px;
+  background:linear-gradient(120deg,rgba(4,20,34,.96),rgba(7,34,50,.94));
+  box-shadow:0 12px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(175,239,248,.06);
+  backdrop-filter:blur(16px);
+}
+.anatomy-scan-console::before {
+  content:""; position:absolute; left:0; top:14px; bottom:14px; width:2px;
+  background:linear-gradient(180deg,#52e5ef,rgba(82,229,239,.08));
+  border-radius:2px;
+}
+@media(max-width:640px) {
+  .anatomy-scan-console { left:8px; right:8px; bottom:8px; padding:11px 12px 10px; }
+  .anatomy-scan-console > div:last-child { font-size:10px; }
+}
