@@ -133,3 +133,90 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .astrovitals-anatomy-viewer *, .real-anatomy-viewport * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* Mobile usability correction: keep navigation in document flow, clear of hosting badges. */
+@media (max-width: 900px) {
+  .app-content {
+    margin-left: 0 !important;
+    padding: 16px 16px 32px;
+  }
+  .app-nav {
+    position: relative;
+    inset: auto;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    flex: 0 0 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding: 8px;
+    margin: 0 0 18px;
+    border: 1px solid rgba(0,198,215,.18);
+    border-radius: 14px;
+    background: rgba(5,20,33,.96);
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+    gap: 6px;
+  }
+  .sidebar-brand,
+  .sidebar-section-label { display: none; }
+  .app-nav .side-link {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
+    padding: 10px 12px !important;
+  }
+  .app-nav .side-link:focus-visible {
+    outline: 2px solid var(--medical-cyan);
+    outline-offset: 2px;
+  }
+}
+@media (max-width: 520px) {
+  .app-content { padding: 12px 12px 28px; }
+  .app-content > header { gap: 12px; padding-bottom: 16px; margin-bottom: 16px; }
+  .app-content > header h1 { font-size: 27px; }
+  .app-nav { margin-bottom: 14px; }
+}
+
+/* Anatomy viewer: release desktop minimum heights on phones and give the model a stable frame. */
+.real-anatomy-viewport {
+  position: relative;
+  min-height: 560px;
+  height: min(72vh, 720px);
+  isolation: isolate;
+}
+.astrovitals-anatomy-viewer.oa3d-viewer {
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+}
+@media (max-width: 768px) {
+  .real-anatomy-viewport {
+    min-height: 440px;
+    height: min(68svh, 620px);
+    max-height: 620px;
+  }
+  .astrovitals-anatomy-viewer.oa3d-viewer {
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .real-anatomy-viewport {
+    min-height: 400px;
+    height: 62svh;
+  }
+  .astrovitals-anatomy-viewer.oa3d-viewer {
+    min-height: 0;
+  }
+}
