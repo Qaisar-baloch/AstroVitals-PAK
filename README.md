@@ -116,3 +116,8 @@ NASA and NASA Human Research Program resources are linked in the in-app science 
 ## Licence
 
 Add the repository's chosen software licence before redistributing the source. Third-party assets remain subject to their own licences and attribution requirements.
+
+
+### Mission Control visual identity
+
+The Mission Control interface uses a restrained deep-space flight-deck theme: layered starfield texture, orbital artwork, subtle signal animation, and a Mars-transit scenario strip. These elements are illustrative UI decoration only and do not represent live spacecraft navigation, telemetry links, or real mission position. The anatomy viewer uses a subtle technical grid and viewport label while preserving the reference atlas and its interaction controls.
