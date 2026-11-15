@@ -129,3 +129,10 @@ The Mission Control interface uses a restrained deep-space flight-deck theme: la
 - The route graphic is illustrative and does not calculate orbital mechanics, travel time, spacecraft position, or live telemetry.
 - Improved supporting-text legibility across the application with larger small-label typography and stronger contrast for muted slate text.
 - Added responsive styling and reduced-motion handling for the trajectory animation.
+
+
+### Anatomy scan console and communications simulator
+
+- The anatomy viewport now includes a mission scan console in its lower area, showing the selected region, crew profile, demo status, linked indicators, and quick actions to open check-in or analytics.
+- Added a Mission Communications workspace with an adjustable illustrative one-way delay, editable message composer, queued messages, and manually simulated delivery.
+- The communications simulator is local UI state only. It does not connect to a spacecraft, NASA network, radio system, or external service.
