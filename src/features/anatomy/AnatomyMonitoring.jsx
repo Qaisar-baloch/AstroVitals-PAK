@@ -73,17 +73,17 @@ export default function AnatomyMonitoring({ selectedCrew, selectedRegion, setSel
             highlightColor="#ffb547"
             className="astrovitals-anatomy-viewer"
           />
-          <div className="anatomy-scan-console">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div><div className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-200">MISSION ANATOMY SCAN CONSOLE</div><div className="mt-1 text-sm font-semibold text-white">{selectedMeta.label} <span className="font-normal text-slate-300">· Crew {String(selectedCrew + 1).padStart(2, '0')}</span></div></div>
-              <span className="rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-wider" style={{color:STATUS[selectedStatus],borderColor:`${STATUS[selectedStatus]}88`,background:`${STATUS[selectedStatus]}18`}}>{selectedStatus} · DEMO</span>
-            </div>
-            <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
-              <div><div className="text-[10px] uppercase tracking-wider text-slate-300">Linked indicators</div><div className="mt-2 flex flex-wrap gap-1.5">{(selectedRegionData?.indicators || []).slice(0,4).map((item) => <span key={item} className="rounded-md border border-cyan-200/20 bg-cyan-300/[.07] px-2 py-1 text-[11px] text-cyan-50">{item}</span>)}</div></div>
-              <div className="flex flex-wrap gap-2"><button onClick={() => onNavigate?.('checkin')} className="rounded-lg border border-cyan-200/30 bg-cyan-300/10 px-3 py-2 text-[11px] font-semibold text-cyan-50 hover:bg-cyan-300/20">NEW CHECK-IN ↗</button><button onClick={() => onNavigate?.('analytics')} className="rounded-lg bg-cyan-300 px-3 py-2 text-[11px] font-bold text-slate-950 hover:bg-cyan-200">VIEW TRENDS ↗</button></div>
-            </div>
-            <div className="mt-2 text-[10px] leading-5 text-slate-300">Reference atlas selection linked to synthetic crew-health status. This is an educational display, not a diagnostic scan.</div>
+        </div>
+        <div className="anatomy-scan-console">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div><div className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-200">MISSION ANATOMY SCAN CONSOLE</div><div className="mt-1 text-sm font-semibold text-white">{selectedMeta.label} <span className="font-normal text-slate-300">· Crew {String(selectedCrew + 1).padStart(2, '0')}</span></div></div>
+            <span className="rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-wider" style={{color:STATUS[selectedStatus],borderColor:`${STATUS[selectedStatus]}88`,background:`${STATUS[selectedStatus]}18`}}>{selectedStatus} · DEMO</span>
           </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
+            <div><div className="text-[10px] uppercase tracking-wider text-slate-300">Linked indicators</div><div className="mt-2 flex flex-wrap gap-1.5">{(selectedRegionData?.indicators || []).slice(0,4).map((item) => <span key={item} className="rounded-md border border-cyan-200/20 bg-cyan-300/[.07] px-2 py-1 text-[11px] text-cyan-50">{item}</span>)}</div></div>
+            <div className="flex flex-wrap gap-2"><button onClick={() => onNavigate?.('checkin')} className="rounded-lg border border-cyan-200/30 bg-cyan-300/10 px-3 py-2 text-[11px] font-semibold text-cyan-50 hover:bg-cyan-300/20">NEW CHECK-IN ↗</button><button onClick={() => onNavigate?.('analytics')} className="rounded-lg bg-cyan-300 px-3 py-2 text-[11px] font-bold text-slate-950 hover:bg-cyan-200">VIEW TRENDS ↗</button></div>
+          </div>
+          <div className="mt-2 text-[10px] leading-5 text-slate-300">Reference atlas selection linked to synthetic crew-health status. This is an educational display, not a diagnostic scan.</div>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700/70 px-4 py-3"><div className="flex flex-wrap gap-3 text-[9px] text-slate-400">{Object.entries({normal:'Normal',watch:'Watch',alert:'Alert'}).map(([key,label]) => <span key={key} className="flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full" style={{background:STATUS[key]}}/>{label}</span>)}</div><span className="text-[9px] text-slate-500">Heatmap pins represent synthetic demo status only</span></div>
       </section>
