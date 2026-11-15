@@ -460,3 +460,10 @@ button { font: inherit; }
   .anatomy-scan-console { left:8px; right:8px; bottom:8px; padding:11px 12px 10px; }
   .anatomy-scan-console > div:last-child { font-size:10px; }
 }
+
+
+/* Mission communications controls: match the flight-deck visual language. */
+.app-content input[type="range"] { accent-color:#65e7f0; cursor:pointer; }
+.app-content select, .app-content textarea { color:#e8f4f8; background-color:#061725; border-color:rgba(137,184,204,.38); }
+.app-content select:focus, .app-content textarea:focus, .app-content input:focus-visible { outline:2px solid rgba(93,224,237,.72); outline-offset:2px; }
+.app-content select option { background:#071a2b; color:#e8f4f8; }
