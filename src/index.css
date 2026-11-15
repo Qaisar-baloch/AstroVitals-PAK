@@ -329,3 +329,62 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .mc-hero::after { animation: none; }
 }
+
+
+/* Phase 9: compact orbital telemetry artwork for the Mission Control flight deck */
+.mission-orbit-strip {
+  border-color: rgba(91,190,216,.2);
+  background:
+    radial-gradient(ellipse at 82% 50%, rgba(42,132,174,.13), transparent 38%),
+    linear-gradient(110deg, rgba(8,29,46,.97), rgba(7,24,39,.92));
+}
+.mission-chip {
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid rgba(104,179,202,.18); border-radius:999px;
+  padding:6px 9px; color:#9db8c8; background:rgba(3,16,28,.38);
+  font:700 8px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing:1px;
+}
+.mission-chip i {
+  width:6px; height:6px; border-radius:50%; background:#4bd5b3;
+  box-shadow:0 0 9px rgba(75,213,179,.65); animation:mission-signal-pulse 2.4s ease-in-out infinite;
+}
+.mission-orbit-art {
+  position:relative; width:150px; height:116px; justify-self:center;
+  display:grid; place-items:center; isolation:isolate;
+}
+.orbit-planet {
+  position:absolute; width:54px; height:54px; border-radius:50%;
+  background:radial-gradient(circle at 30% 27%,#d7a17d 0 5%,#a85e49 32%,#623c3d 70%,#1a2739 100%);
+  box-shadow:inset -10px -6px 14px rgba(0,0,0,.55),0 0 24px rgba(70,150,188,.18);
+}
+.orbit-ring { position:absolute; width:94px; height:42px; border:1px solid rgba(106,208,227,.48); border-radius:50%; transform:rotate(-28deg); }
+.orbit-ring-two { width:130px; height:68px; transform:rotate(32deg); border-color:rgba(89,160,200,.25); }
+.orbit-moon {
+  position:absolute; width:8px; height:8px; border-radius:50%; background:#a9e9ef;
+  box-shadow:0 0 12px rgba(117,228,239,.9); animation:mission-orbit 9s linear infinite;
+}
+.orbit-cross { position:absolute; width:3px; height:3px; background:#a8d7e6; box-shadow:0 0 7px #73d6e7; }
+.orbit-cross-one { top:14px; right:20px; }
+.orbit-cross-two { bottom:13px; left:18px; }
+@keyframes mission-orbit { from { transform:rotate(0deg) translateX(57px) rotate(0deg); } to { transform:rotate(360deg) translateX(57px) rotate(-360deg); } }
+@keyframes mission-signal-pulse { 0%,100% { opacity:.65; } 50% { opacity:1; box-shadow:0 0 13px rgba(75,213,179,.9); } }
+@media (max-width:640px) {
+  .mission-orbit-art { position:absolute; right:-12px; top:4px; width:116px; height:92px; opacity:.5; transform:scale(.82); transform-origin:top right; }
+  .mission-orbit-strip { padding-right:12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .orbit-moon,.mission-chip i { animation:none; }
+}
+
+/* Anatomy viewer receives a subtle flight-deck frame without obscuring atlas controls. */
+.anatomy-viewport, .real-anatomy-viewport {
+  position:relative;
+}
+.real-anatomy-viewport::after {
+  content:"ATLAS VIEWPORT  /  REFERENCE MODEL";
+  position:absolute; z-index:5; left:12px; top:10px;
+  padding:5px 7px; border:1px solid rgba(97,191,211,.2);
+  border-radius:5px; background:rgba(4,18,30,.72);
+  color:rgba(169,211,224,.62); font:7px ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing:1.4px; pointer-events:none;
+}
