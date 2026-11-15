@@ -412,3 +412,30 @@ button { font: inherit; }
 @media (max-width: 520px) {
   .app-content [class*="text-[9px]"] { font-size: 10px !important; }
 }
+
+
+/* Phase 10: accessible Earth-to-Mars trajectory illustration */
+.mission-route-visual {
+  min-height:190px; display:grid; grid-template-columns:100px minmax(80px,1fr) 100px;
+  align-items:center; gap:10px; padding:18px 4px;
+  border:1px solid rgba(90,177,204,.15); border-radius:14px;
+  background:radial-gradient(ellipse at 50% 50%,rgba(30,95,130,.18),transparent 65%),rgba(2,14,26,.35);
+  overflow:hidden;
+}
+.route-body { display:flex; flex-direction:column; align-items:center; gap:10px; position:relative; z-index:2; }
+.route-planet-label { color:#d2e4ec; font:700 11px ui-monospace,monospace; letter-spacing:2px; }
+.route-planet { display:block; width:64px; height:64px; border-radius:50%; }
+.earth-globe { background:radial-gradient(circle at 32% 25%,#c6f1ff 0 3%,#3c9bc3 22%,#17618b 58%,#0a263e 100%); box-shadow:inset -12px -8px 18px rgba(0,0,0,.5),0 0 25px rgba(56,173,226,.22); }
+.mars-globe { background:radial-gradient(circle at 32% 25%,#f2c19a 0 3%,#bd7656 22%,#8b4638 58%,#321e29 100%); box-shadow:inset -12px -8px 18px rgba(0,0,0,.5),0 0 25px rgba(210,112,75,.18); }
+.route-path { position:relative; min-width:0; height:95px; display:flex; align-items:center; justify-content:center; }
+.route-path-line { position:absolute; left:0; right:0; top:48%; border-top:2px dashed rgba(109,202,224,.55); }
+.route-spacecraft { position:relative; z-index:1; display:grid; place-items:center; width:28px; height:28px; border:1px solid rgba(126,227,239,.55); border-radius:50%; color:#aaf4fa; background:#09263a; box-shadow:0 0 18px rgba(76,212,232,.25); animation:route-craft-drift 5s ease-in-out infinite alternate; }
+.route-path-caption { position:absolute; bottom:0; color:#a9bdcb; font:9px ui-monospace,monospace; letter-spacing:1px; text-align:center; }
+@keyframes route-craft-drift { from { transform:translateX(-22px); } to { transform:translateX(22px); } }
+@media(max-width:520px) {
+ .mission-route-visual { grid-template-columns:72px minmax(40px,1fr) 72px; gap:4px; min-height:160px; }
+ .route-planet { width:48px; height:48px; }
+ .route-planet-label { font-size:9px; }
+ .route-path-caption { font-size:7px; letter-spacing:.4px; }
+}
+@media(prefers-reduced-motion:reduce) { .route-spacecraft { animation:none; } }
