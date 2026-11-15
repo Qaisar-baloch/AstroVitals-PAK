@@ -19,6 +19,7 @@ AstroVitals PAK is an offline-first, front-end prototype that demonstrates how a
 - **Decision support prototype:** baseline comparisons and workflow prompts using demonstration logic, not clinical thresholds.
 - **Alert intelligence:** information, warning, and critical workflow labels, filtering, and local acknowledgement history.
 - **Mission routines:** per-crew daily checklist and locally stored reminders.
+- **Data & privacy center:** inventory of local browser data categories and one-click JSON backup export. The export remains on the user's device and does not upload or restore records.
 - **NASA science library:** educational context, source links, and hazard-to-health monitoring map.
 
 ## Technology
@@ -69,6 +70,7 @@ The repository includes `netlify.toml` and an SPA fallback redirect. No backend 
 - Manual check-ins are labelled as user-entered and stored in the current browser's localStorage.
 - Manual records and simulated telemetry are not merged.
 - LocalStorage is not encrypted medical storage and does not synchronize between devices.
+- The Data & privacy center can export a JSON snapshot of the prototype's known localStorage categories. The exported file may include user-entered notes, so it should be handled carefully. The feature does not upload, encrypt, or restore data.
 - The anatomy viewer is an educational reference, not a diagnostic or clinically validated tool.
 - Demonstration baselines, z-scores, status colors, and alert levels are software examples, not medical reference ranges or clinical urgency classifications.
 - NASA references provide educational context; they do not validate the prototype's synthetic values, thresholds, or actions.
