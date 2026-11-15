@@ -220,3 +220,112 @@ button { font: inherit; }
     min-height: 0;
   }
 }
+
+
+/* Phase 9: Mission Control visual identity - restrained deep-space flight deck */
+.starfield {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(1px 1px at 18px 26px, rgba(210,239,255,.42) 98%, transparent),
+    radial-gradient(1px 1px at 82px 112px, rgba(105,211,235,.34) 98%, transparent),
+    radial-gradient(1.5px 1.5px at 146px 54px, rgba(255,255,255,.38) 98%, transparent),
+    radial-gradient(1px 1px at 205px 168px, rgba(153,205,255,.3) 98%, transparent),
+    radial-gradient(ellipse at 78% 6%, rgba(37,108,160,.13), transparent 34rem);
+  background-size: 240px 220px, 280px 260px, 310px 290px, 360px 330px, auto;
+  background-position: 0 0, 35px 22px, 80px 10px, 20px 60px, center top;
+}
+.starfield::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .16;
+  background: linear-gradient(115deg, transparent 0 48%, rgba(55,178,210,.08) 49%, transparent 50% 100%);
+  background-size: 100% 100%;
+}
+.mc-hero {
+  isolation: isolate;
+  min-height: 270px;
+}
+.mc-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: clamp(250px, 34vw, 430px);
+  aspect-ratio: 1;
+  right: 2.5%;
+  top: 50%;
+  transform: translateY(-48%) rotate(-18deg);
+  border: 1px solid rgba(99,211,232,.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(74,174,206,.035), 0 0 0 58px rgba(74,174,206,.025), inset 0 0 35px rgba(66,181,218,.07);
+  pointer-events: none;
+}
+.mc-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: clamp(145px, 21vw, 250px);
+  aspect-ratio: 1;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 31% 28%, rgba(255,221,183,.9) 0 1%, transparent 5%),
+    radial-gradient(ellipse at 35% 30%, rgba(210,129,91,.92), transparent 34%),
+    radial-gradient(ellipse at 66% 68%, rgba(92,43,43,.9), transparent 52%),
+    radial-gradient(circle at 38% 36%, #b86e52 0%, #773f3c 48%, #271f32 76%, #0a1728 100%);
+  box-shadow: inset -22px -12px 34px rgba(0,0,0,.52), 0 0 48px rgba(67,156,192,.17), 0 0 95px rgba(42,113,157,.12);
+  opacity: .78;
+  pointer-events: none;
+  animation: mission-planet-breathe 12s ease-in-out infinite alternate;
+}
+.mc-hero-grid { z-index: 0; pointer-events: none; }
+.mc-hero > .relative { z-index: 2; }
+.mc-hero .mc-hero-grid::after {
+  content: "MARS TRANSIT  /  FLIGHT DECK";
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  color: rgba(145,205,221,.38);
+  font: 8px ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: 2.4px;
+}
+.mc-stat, .mc-crew-card, .panel {
+  backdrop-filter: blur(14px);
+}
+.mc-stat { border-color: rgba(87,168,196,.18); }
+.mc-crew-card:hover {
+  box-shadow: 0 12px 34px rgba(0,160,190,.08);
+}
+.real-anatomy-viewport {
+  border-top: 1px solid rgba(87,201,221,.16);
+  border-bottom: 1px solid rgba(87,201,221,.16);
+  background:
+    linear-gradient(rgba(76,178,205,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76,178,205,.055) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 42%, rgba(0,198,215,.13), transparent 54%),
+    #061725;
+  background-size: 32px 32px, 32px 32px, auto, auto;
+}
+@keyframes mission-planet-breathe {
+  from { filter: brightness(.92); }
+  to { filter: brightness(1.08); }
+}
+@media (max-width: 900px) {
+  .mc-hero { min-height: 250px; }
+  .mc-hero::before { right: -100px; opacity: .48; }
+  .mc-hero::after { right: -28px; opacity: .35; }
+  .mc-hero .mc-hero-grid::after { display: none; }
+}
+@media (max-width: 520px) {
+  .mc-hero { min-height: 0; }
+  .mc-hero::before { width: 210px; right: -112px; top: 26%; }
+  .mc-hero::after { width: 125px; right: -58px; top: 26%; opacity: .23; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-hero::after { animation: none; }
+}
