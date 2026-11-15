@@ -388,3 +388,27 @@ button { font: inherit; }
   color:rgba(169,211,224,.62); font:7px ui-monospace, SFMono-Regular, Consolas, monospace;
   letter-spacing:1.4px; pointer-events:none;
 }
+
+
+/* Phase 10: accessibility pass - stronger contrast and readable supporting copy */
+.app-content .text-slate-600 { color: #91a9bb !important; }
+.app-content .text-slate-500 { color: #a9bdcb !important; }
+.app-content .text-slate-400 { color: #c0cfda !important; }
+.app-content .text-slate-300 { color: #d4e0e8 !important; }
+.app-content .text-cyan-300 { color: #62e5f0 !important; }
+.app-content .text-cyan-200 { color: #9af1f6 !important; }
+.app-content .text-emerald-300 { color: #75e6c6 !important; }
+.app-content .text-amber-300 { color: #ffd078 !important; }
+.app-content .text-rose-300 { color: #ff91a5 !important; }
+.app-content [class*="text-[9px]"] { font-size: 11px !important; line-height: 1.5 !important; }
+.app-content [class*="text-[10px]"] { font-size: 12px !important; line-height: 1.55 !important; }
+.app-content [class*="text-[11px]"] { font-size: 13px !important; line-height: 1.55 !important; }
+.app-content .mission-orbit-strip p { font-size: 14px !important; line-height: 1.65 !important; color: #c0cfda !important; }
+.app-content .mission-chip { font-size: 10px; color: #c0d8e4; }
+.app-content .brand-caption { color: #9bb2c1; }
+.app-content .sidebar-section-label { color: #a4bac8; }
+.app-content .app-nav .side-link { color: #c0d0dc !important; }
+.app-content .app-nav .side-link[class*="border-cyan-300"] { color: #e5fbff !important; }
+@media (max-width: 520px) {
+  .app-content [class*="text-[9px]"] { font-size: 10px !important; }
+}
