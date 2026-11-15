@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AstroVitals PAK emblem">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0D2D43"/><stop offset="1" stop-color="#071A2B"/></linearGradient></defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="245" r="164" fill="none" stroke="#00C6D7" stroke-width="15" opacity=".9"/>
+  <ellipse cx="256" cy="245" rx="202" ry="83" transform="rotate(-32 256 245)" fill="none" stroke="#00C6D7" stroke-width="10" opacity=".75"/>
+  <circle cx="256" cy="176" r="43" fill="#EAF4F8"/>
+  <path d="M174 315c0-49 36-83 82-83s82 34 82 83v25H174z" fill="#EAF4F8"/>
+  <path d="M256 252v76M218 290h76" stroke="#00C6D7" stroke-width="19" stroke-linecap="round"/>
+  <text x="256" y="452" text-anchor="middle" font-family="Arial,sans-serif" font-size="43" font-weight="700" letter-spacing="5" fill="#EAF4F8">PAK</text>
+</svg>
