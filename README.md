@@ -121,3 +121,11 @@ Add the repository's chosen software licence before redistributing the source. T
 ### Mission Control visual identity
 
 The Mission Control interface uses a restrained deep-space flight-deck theme: layered starfield texture, orbital artwork, subtle signal animation, and a Mars-transit scenario strip. These elements are illustrative UI decoration only and do not represent live spacecraft navigation, telemetry links, or real mission position. The anatomy viewer uses a subtle technical grid and viewport label while preserving the reference atlas and its interaction controls.
+
+
+### Mission trajectory workspace and readability update
+
+- Added a selectable Earth departure, deep-space cruise, and Mars approach timeline. Each phase displays a corresponding crew-health monitoring focus and workflow.
+- The route graphic is illustrative and does not calculate orbital mechanics, travel time, spacecraft position, or live telemetry.
+- Improved supporting-text legibility across the application with larger small-label typography and stronger contrast for muted slate text.
+- Added responsive styling and reduced-motion handling for the trajectory animation.
